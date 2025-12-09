@@ -17,4 +17,8 @@ jobs:
 #       run: npm install
       - name: Build
         run: npm run build
-      
+      - name: Upload build to Artifact
+        uses: actions/upload-artifact@v5.0.0
+        with:
+            name: abc
+            path: out/
