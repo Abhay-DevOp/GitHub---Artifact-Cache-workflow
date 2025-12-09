@@ -1,0 +1,20 @@
+name: Artifact & Cache workflow
+on:
+  push:
+    branches: [main]
+jobs:
+  two-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6.0.1
+      - name: Setup Nodejs
+        uses: actions/setup-node@v6.1.0
+        with: 
+          node-version: 22.X
+          cache: 'npm'
+#     - name: install dependencies
+#       run: npm install
+      - name: Build
+        run: npm run build
+      
